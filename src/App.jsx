@@ -1,35 +1,57 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Panel from "./components/Panel";
+import Cart from "./components/Cart";
+
+import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [cartState, setCartState] = useState({
+    items: [],
+    number: 0,
+    totalPrice: 0,
+  });
 
+  const data = [
+    {
+      id: 1,
+      img: "./products/Product_01.jpg",
+      title: "Product 1",
+      info: "This is a product!",
+      price: 29.99,
+    },
+    {
+      id: 2,
+      img: "./products/Product_02.jpg",
+      title: "Product 2",
+      info: "This is a product!",
+      price: 222.95,
+    },
+    {
+      id: 3,
+      img: "./products/Product_03.jpg",
+      title: "Product 3",
+      info: "This is a product!",
+      price: 88.12,
+    },
+    {
+      id: 4,
+      img: "./products/Product_04.jpg",
+      title: "Product 4",
+      info: "This is a product!",
+      price: 22.23,
+    },
+  ];
+  console.log(cartState);
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div>
+      <div className="main">
+        <Cart cartData={cartState} />
+        <div className="cards">
+          {data.map((d) => (
+            <Panel data={d} key={d.id} propCart={{ cartState, setCartState }} />
+          ))}
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
-
-export default App
+export default App;

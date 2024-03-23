@@ -1,0 +1,63 @@
+.cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.card {
+  width: 25%;
+  height: 200px;
+  border: dashed 2px gray;
+  margin: 5px;
+  padding: 10px 10px 10px 10px;
+  font-family: sans-serif;
+  font-size: 10pt;
+  box-shadow: 4px 4px 5px rgb(68, 65, 65);
+  display: flexbox;
+  justify-content: center;
+}
+.price {
+  font-family: sans-serif;
+  font-size: 12pt;
+  font-weight: bold;
+  color: #2b2848;
+  width: 30%;
+}
+.price-fraction {
+  position: relative;
+  font-size: 10px;
+  top: -4px;
+}
+h3 {
+  margin: 3px 0px 3px 0px;
+}
+.frm {
+  display: flex;
+}
+.frm .itemsAdded {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  font-weight: bold;
+}
+.cart {
+  display: flex;
+  height: 30px;
+  width: 145px;
+  justify-content: space-around;
+  align-items: center;
+  border: solid 2px rgb(14, 51, 81);
+  font-family: sans-serif;
+  margin: 2px;
+}
+.checkOut {
+  display: flex;
+  font-family: sans-serif;
+  justify-content: flex-end;
+}
+.checkOutItems {
+  display: flex;
+  flex-direction: column;
+}
